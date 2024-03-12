@@ -6,18 +6,16 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:39:58 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/11 16:15:01 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:26:00 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	void	*s_n;
-
-	s_n = &s[n];
-	while (s < s_n)
-	{
-		*s = 0;
-		s += 1;
-	}
+	unsigned char		*p;
+	
+	p = (unsigned char *)s;	
+	while (n--)
+		*p++ = 0;
 }
