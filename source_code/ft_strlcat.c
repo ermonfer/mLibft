@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 18:09:44 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 18:10:09 by fmontero         ###   ########.fr       */
+/*   Created: 2024/03/13 22:28:04 by fmontero          #+#    #+#             */
+/*   Updated: 2024/03/13 22:28:14 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

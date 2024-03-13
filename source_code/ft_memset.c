@@ -6,9 +6,10 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:23:04 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 17:06:25 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/03/13 22:27:19 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)

@@ -6,9 +6,10 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:54:33 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 17:07:27 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/03/13 22:25:12 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_isupper(int c)
