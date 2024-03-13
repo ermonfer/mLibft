@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 12:54:33 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 23:28:13 by fmontero         ###   ########.fr       */
+/*   Created: 2024/03/13 23:25:48 by fmontero          #+#    #+#             */
+/*   Updated: 2024/03/13 23:27:04 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+static int	ft_islower(int c)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	return (c >= 'a' && c <= 'z');
 }
