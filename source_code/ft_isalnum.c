@@ -6,12 +6,10 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:01:06 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/12 11:22:21 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:08:06 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_isalpha.c"
-#include "ft_isdigit.c"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
