@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
+#include "ft_isalpha.c"
+#include "ft_isdigit.c"
 
 int	ft_isalnum(int c)
 {
