@@ -1,6 +1,8 @@
 #include "../source_code/ft_isalnum.c"
 #include "../source_code/ft_isalpha.c"
 #include "../source_code/ft_isdigit.c"
+#include "../source_code/ft_isupper.c"
+#include "../source_code/ft_islower.c"
 #include <ctype.h>
 #include <stdio.h>
 
@@ -15,9 +17,7 @@ int main(int argc, char *argv[])
     int c = argv[1][0];
 
     // Comparar los resultados
-    if (ft_isalnum(c) == isalnum(c))
-        printf("Las funciones produjeron los mismos resultados.\n");
-	else
-        printf("Las funciones NO produjeron los mismos resultados.\n");
+	printf("ft_isalnum: %d\n", ft_isalnum(c));
+	printf("ft_isalnum: %d\n", isalnum(c));
     return 0;
 }

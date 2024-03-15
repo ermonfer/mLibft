@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../source_code/libft.h"
+#include "../source_code/ft_strchr.c"
 
 int main(int argc, char *argv[]) {
   if (argc !=  3) {

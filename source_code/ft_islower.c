@@ -6,13 +6,13 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 23:25:48 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 23:27:04 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:09:34 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_islower(int c)
+int	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }
