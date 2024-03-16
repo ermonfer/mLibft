@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <stddef.h>
 #include <ctype.h>
-#include <stdlib.h>
-#include "../source_code/ft_isascii.c" 
+#include "../source_code/ft_isprint.c"
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -10,11 +8,11 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    int c = atoi(argv[1]);
+    int arg = argv[1][0];
 
     // Comparar los resultados
-    printf("ft_isascii: %d\n", ft_isascii(c));
-    printf("isascii: %d\n", isascii(c));
+    printf("ft_isprint: %d\n", ft_isprint(arg));
+    printf("isprint: %d\n", isprint(arg));
 
     return 0;
 }
