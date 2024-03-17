@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:06:05 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 22:28:49 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/03/17 13:50:26 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t		i;
 
 	i = 0;
-	if (s[i])
+	while (s[i])
 		i += 1;
 	return (i);
 }
