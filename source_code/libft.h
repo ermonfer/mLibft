@@ -6,11 +6,11 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:29:22 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/03 20:12:19 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/04 19:10:26 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stddef.h> // para size_t
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
@@ -32,3 +32,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_isspace(int c);
+int		ft_atoi(const char *str);
+void	*calloc(size_t count, size_t size);
