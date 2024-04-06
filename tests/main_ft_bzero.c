@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h> // Para strtol
 #include <string.h> // Para strdup y strlen
-#include <stddef.h> // Para size_t
 #include "../source_code/ft_bzero.c"
+#include "../source_code/ft_memset.c"
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
