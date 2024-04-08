@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:29:22 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/04 19:10:26 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/08 21:20:32 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_isspace(int c);
 int		ft_atoi(const char *str);
 void	*calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+int		isinchr(const char c, const char *str);
+

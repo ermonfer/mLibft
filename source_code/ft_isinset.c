@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isinset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 14:59:21 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 21:43:30 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/08 19:18:40 by fmontero          #+#    #+#             */
+/*   Updated: 2024/04/08 21:37:30 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_isinchr(const char c, const char *str)
 {
-	while (*s != '\0')
+	while (*str != '\0')
 	{
-		if (*s++ == c)
-			return ((char *)--s);
+		if (c == *str++)
+			return (1);
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (NULL);
+	return (0);
 }

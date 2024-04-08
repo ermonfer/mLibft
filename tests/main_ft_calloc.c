@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../source_code/ft_calloc.c"
 #include "../source_code/ft_memset.c"
+#include "../source_code/ft_bzero.c"
 
 /* por como esta hecha la funcion la comparacion con 
  * algun argumento nulo no tienen sentido */

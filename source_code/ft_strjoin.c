@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 18:01:55 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 20:34:18 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/08 15:41:33 by fmontero          #+#    #+#             */
+/*   Updated: 2024/04/08 18:28:49 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*r;
+	char	*new;
+	size_t	lens1;
+	size_t	lens2;
 
-	r = NULL;
-	while (*s == '\0')
-	{
-		if (*s++ == c)
-			r = (char *)--s;
-	}
-	if (c == '\0')
-		r = (char *)s;
-	return (r);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	new = malloc(lens1 + lens2 + 1);
+	if (new == NULL)
+		return (NULL);
+	ft_memcpy(new, s1, lens1);
+	ft_memcpy(new + lens1, s2, lens2);
+	new[lens1 + lens2] = '\0';
+	return (new);
 }

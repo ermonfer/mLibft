@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 14:59:21 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 21:43:30 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/08 13:53:34 by fmontero          #+#    #+#             */
+/*   Updated: 2024/04/08 14:12:51 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strdup(const char *s1)
 {
-	while (*s != '\0')
+	size_t	len;
+	char	*copy;
+
+	copy = NULL;
+	if (s1 != NULL)
 	{
-		if (*s++ == c)
-			return ((char *)--s);
+		len = ft_strlen(s1) + 1;
+		copy = malloc(len);
+		if (copy == NULL)
+			return (NULL);
+		ft_memcpy(copy, s1, len);
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (NULL);
+	return (copy);
 }
