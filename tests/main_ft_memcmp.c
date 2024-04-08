@@ -1,8 +1,6 @@
-
 #include <stdio.h>
 #include <stdlib.h> // Para la función atoi
 #include <string.h> // Para la función memcmp
-#include "../source_code/libft.h"
 #include "../source_code/ft_memcmp.c"
 
 int main(int argc, char *argv[]) {
