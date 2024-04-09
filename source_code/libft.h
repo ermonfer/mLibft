@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:29:22 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 22:37:43 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:42:08 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,4 @@ void	*calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		isinchr(const char c, const char *str);
+char	*ft_strtrim(char const *s1, char const *set);

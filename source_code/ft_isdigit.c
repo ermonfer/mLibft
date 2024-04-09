@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:56:11 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 20:02:47 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:38:39 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,5 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char	uc;
-
-	uc = (unsigned char)c;
-	if (c == EOF)
-		return (0);
-	return (uc >= '0' && uc <= '9');
+	return (c >= '0' && c <= '9');
 }

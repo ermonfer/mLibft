@@ -6,24 +6,32 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:42:39 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 22:39:00 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/09 14:06:25 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT.H
+#define LIBFT.H
 #include "libft.h"
+#endif
+
+/* Devuelve una version recortada de s1 donde se han eliminado las secuencias
+ * de char contenidas en set al principio y al final de la cadena */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char const	*begin;
 
-	while (ft_isinchr(*s1, set))
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (*s1  && ft_strchr(set, *s1))
 		s1++;
-	if (s1 == '\0')
-		return (strdup(s1));
-	begin = s;
+	if (*s1 == '\0')
+		return (ft_strdup(""));
+	begin = s1;
 	while (*++s1 != '\0')
 		;
-	while (ft_isinchr(*--s1, set))
+	while (ft_strchr(set, *--s1))
 		;
-	return (ft_substr(begin, 0, end - begin + 1));
+	return (ft_substr(begin, 0, s1 - begin + 1));
 }
