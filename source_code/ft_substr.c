@@ -6,12 +6,15 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:29:04 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 21:43:30 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:33:17 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "stdlib.h"
+
+/* Devuelve una substring alocada que contiene una copia comenzando
+ * por s[start] y de longitud len */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
