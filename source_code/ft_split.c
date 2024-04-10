@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:44:44 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/10 13:02:25 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:31:53 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	count_words(char const *s, char c)
 
 	words = 0;
 	while (*s)
-{
+	{
 		if (*s == c)
 			s++;
 		else
@@ -63,7 +63,7 @@ static char	**copy_words(char const *s, char c, char **result, int len)
 	while (*s == c)
 		s++;
 	while (i < len)
-	{	
+	{
 		word_end = ft_strchr(s, c);
 		if (word_end == NULL)
 			word_end = ft_strchr(s, '\0');
