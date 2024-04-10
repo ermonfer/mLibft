@@ -6,27 +6,37 @@
 #include "../source_code/ft_strlen.c"
 #include "../source_code/ft_memcpy.c"
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    char const *s = "Hello World! This is a test string.";
-    char c = ' ';
-
-    char **result = ft_split(s, c);
-    if (result == NULL)
+    if (argc != 3)
     {
-        printf("Error: ft_split returned NULL\n");
+        printf("Uso: %s <cadena> <delimitador>\n", argv[0]);
         return 1;
     }
 
-    printf("Split string:\n");
-    for (int i = 0; result[i] != NULL; i++)
+    char *str = argv[1];
+    char delim = argv[2][0]; // Tomamos el primer carácter del segundo argumento como delimitador
+
+    printf("Cadena original: \"%s\"\n", str);
+    printf("Delimitador: '%c'\n", delim);
+
+    char **result = ft_split(str, delim);
+    if (result != NULL)
     {
-        printf("%s\n", result[i]);
-        free(result[i]); // Free each word
+        printf("Resultado:\n");
+        for (int i = 0; result[i] != NULL; i++)
+        {
+            printf("[%d]: \"%s\"\n", i, result[i]);
+            free(result[i]);
+        }
+        free(result);
     }
-    free(result); // Free the array of words
+    else
+    {
+        printf("Error al dividir la cadena.\n");
+    }
 
     return 0;
 }
-
