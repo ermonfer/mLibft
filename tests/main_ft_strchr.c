@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
   const char *cadena = argv[1];
   char caracter = *argv[2];
 
-  char *ptr_ft_strchr = ft_strchr(cadena, caracter);
+  char *ptr_ft_strchr = strchr(cadena, caracter);
   char *ptr_strchr = strchr(cadena, caracter);
 
   printf("Cadena: \"%s\", Caracter: '%c'\n", cadena, caracter);
