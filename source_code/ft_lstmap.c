@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:05:19 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/15 14:07:37 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/15 15:30:05 by fmontero          #+#    #+#             */
+/*   Updated: 2024/04/15 15:41:15 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +31,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
-=======
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	
->>>>>>> b785db0a2f3babd23aa98de839e6fac06ea89aa8
