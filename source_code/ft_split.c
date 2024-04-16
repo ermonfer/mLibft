@@ -6,11 +6,12 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:44:44 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/10 23:31:53 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:20:07 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int		count_words(char const *s, char c);
 static char		**copy_words(char const *s, char c, char **result, int len);

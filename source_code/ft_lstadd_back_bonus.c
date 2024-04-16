@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:33:22 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/14 18:07:11 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:32:44 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (lst == NULL || new == NULL)
 		return ;
 	last = *lst;
-	while (lst -> next == NULL)
-		lst = lst -> next;
-	lst -> next == new;
-}
+	while (last->next == NULL)
+		last = last->next;
+	last->next = new;
 }
