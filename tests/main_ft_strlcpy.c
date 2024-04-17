@@ -6,33 +6,23 @@
 size_t ft_strlcpy(char *dest, const char *src, size_t size);
 
 int main(int argc, char *argv[]) {
-    if (argc != 4) {
-        printf("Uso: %s destino origen tamaño\n", argv[0]);
+    if (argc != 3) {
+        printf("Uso: %s src size\n", argv[0]);
         return 1;
     }
 
     char dest[100];
-    char src[100];
-    size_t size = atoi(argv[3]);
+    size_t size = atoi(argv[2]);
 
-    // Copiar los argumentos de línea de comandos a los arrays
-    strcpy(dest, argv[1]);
-    strcpy(src, argv[2]);
+    size_t result_ft = ft_strlcpy(dest, argv[1], size);
 
-    // Realizar la copia usando ft_strlcpy
-    size_t result_ft = ft_strlcpy(dest, src, size);
-
-    // Comparar los resultados
     printf("Destino después de ft_strlcpy: %s\n", dest);
     printf("Resultado de ft_strlcpy: %zu\n", result_ft);
 
-    // Restaurar dest para usar strlcpy
-    strcpy(dest, argv[1]);
+	bzero(dest, 100);
 
-    // Realizar la copia usando strlcpy
-    size_t result_std = strlcpy(dest, src, size);
+    size_t result_std = strlcpy(dest, argv[1], size);
 
-    // Comparar los resultados
     printf("Destino después de strlcpy: %s\n", dest);
     printf("Resultado de strlcpy: %zu\n", result_std);
 

@@ -6,11 +6,13 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:17:57 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/16 19:57:07 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:29:01 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stddef.h>
 
 int			ft_isupper(int c);
 int			ft_islower(int c);
@@ -64,3 +66,4 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+#endif

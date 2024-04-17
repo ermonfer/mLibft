@@ -6,28 +6,30 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:29:04 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/09 17:33:17 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:09:20 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "stdlib.h"
-
-/* Devuelve una substring alocada que contiene una copia comenzando
- * por s[start] y de longitud len */
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subs;
-	size_t	i;
+	size_t	length;
 
-	subs = malloc(len + 1);
+	length = ft_strlen(s);
+	if (start >= length)
+		return (ft_strdup(""));
+	if (length < len + start)
+		len = length - start;
+	subs = (char *)malloc(len + 1);
 	if (subs == NULL)
 		return (NULL);
 	s += start;
-	i = 0;
-	while (len-- && *s != '\0')
-		subs[i++] = *s++;
-	subs[i] = '\0';
+	length = 0;
+	while (len-- > 0)
+		subs[length++] = *s++;
+	subs[length] = '\0';
 	return (subs);
 }

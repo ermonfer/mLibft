@@ -1,4 +1,7 @@
 #include "../source_code/ft_itoa.c"
+#include "../source_code/ft_strdup.c"
+#include "../source_code/ft_strlen.c"
+#include "../source_code/ft_memcpy.c"
 #include <stdio.h>
 #include <stdlib.h>
 

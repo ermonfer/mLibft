@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:21:02 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/10 12:49:07 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:40:52 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_itoa(int n)
 	char	*result;
 	int		len;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = get_len(n);
 	result = (char *)malloc(len);
 	if (result == NULL)

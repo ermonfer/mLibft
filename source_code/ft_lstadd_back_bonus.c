@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 23:33:22 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/16 19:32:44 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/17 17:50:55 by fmontero          #+#    #+#             */
+/*   Updated: 2024/04/17 18:20:46 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (lst == NULL || new == NULL)
+	if (new == NULL)
 		return ;
-	last = *lst;
-	while (last->next == NULL)
-		last = last->next;
-	last->next = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		last = *lst;
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new;
+	}
 }

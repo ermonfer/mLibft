@@ -1,4 +1,7 @@
 #include "../source_code/ft_substr.c"
+#include "../source_code/ft_strdup.c"
+#include "../source_code/ft_memcpy.c"
+#include "../source_code/ft_strlen.c"
 #include <stdio.h>
 #include <stdlib.h>
 
