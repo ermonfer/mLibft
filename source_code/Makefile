@@ -8,10 +8,8 @@ SRC = ft_atoi.c\
 		ft_isalpha.c\
 		ft_isascii.c\
 		ft_isdigit.c\
-		ft_islower.c\
 		ft_isprint.c\
 		ft_isspace.c\
-		ft_isupper.c\
 		ft_itoa.c\
 		ft_memchr.c\
 		ft_memcmp.c\
@@ -55,7 +53,7 @@ B_OBJ = $(B_SRC:.c=.o)
 
 CFLAGS = -Werror -Wextra -Wall
 
-CC = cc
+CC = gcc
 
 all: $(NAME)
 
@@ -63,7 +61,7 @@ $(NAME): $(OBJ)
 	ar -rcs $(NAME)  $(OBJ) 
 
 bonus:
-	make SRC="$(SRC) $(B_SRC)"
+	make SRC='$(SRC) $(B_SRC)'
 
 clean:
 	rm -rf $(OBJ) $(B_OBJ)
