@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:54:33 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/13 23:28:13 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:42:19 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

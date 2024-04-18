@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 00:06:01 by fmontero          #+#    #+#             */
-/*   Updated: 2024/03/14 12:26:38 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:49:07 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (ft_islower(c))
+	if (c >= 'a' && c <= 'z')
 		return (c + 'A' - 'a');
 	return (c);
 }

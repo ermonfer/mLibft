@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     strcpy(src, argv[2]);
 
     // Realizar la copia usando ft_memcpy
-    ft_memcpy(dest, src, strlen(src) + 1);
+    ft_memcpy(dst, src, strlen(src) + 1);
 
     // Comparar los resultados
     printf("Destino después de ft_memcpy: %s\n", dest);

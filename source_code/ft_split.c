@@ -75,8 +75,8 @@ static char	**copy_words(char const *s, char c, char **result, int len)
 				free(result[i]);
 			return (NULL);
 		}
-		while (*++word_end == c)
-			;
+		while (*word_end == c)
+			word_end ++;
 		s = word_end;
 	}
 	return (result);
