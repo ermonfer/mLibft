@@ -6,12 +6,17 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:44:44 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/16 19:20:07 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:52:00 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+void	leaks(void)
+{
+	system("leaks -q a.out");
+}
 
 static int		count_words(char const *s, char c);
 static char		**copy_words(char const *s, char c, char **result, int len);
@@ -27,7 +32,16 @@ char	**ft_split(char const *s, char c)
 	result = (char **)malloc((words + 1) * sizeof (char *));
 	if (result == NULL)
 		return (NULL);
-	if (copy_words(s, c, result, words) == NULL)
+	if (c == '\0')
+	{
+		result[0] = ft_strdup(s);
+		if (result[0] == NULL)
+		{
+			free(result);
+			return (NULL);
+		}
+	}
+	else if (copy_words(s, c, result, words) == NULL)
 	{
 		free(result);
 		return (NULL);
@@ -41,14 +55,14 @@ static int	count_words(char const *s, char c)
 	int	words;
 
 	words = 0;
-	while (*s)
+	while (*s != '\0')
 	{
 		if (*s == c)
 			s++;
 		else
 		{
 			words++;
-			while (*s && *s != c)
+			while (*s != '\0' && *s != c)
 				s++;
 		}
 	}
@@ -73,10 +87,10 @@ static char	**copy_words(char const *s, char c, char **result, int len)
 		{
 			while (--i >= 0)
 				free(result[i]);
-			return (NULL);
+			return ( NULL);
 		}
 		while (*word_end == c)
-			word_end ++;
+			word_end++;
 		s = word_end;
 	}
 	return (result);

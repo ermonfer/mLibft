@@ -60,8 +60,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rcs $(NAME)  $(OBJ) 
 
-bonus:
-	make SRC='$(SRC) $(B_SRC)'
+bonus: $(B_OBJ)
+	ar -rcs $(NAME) $(B_OBJ)
 
 clean:
 	rm -rf $(OBJ) $(B_OBJ)
