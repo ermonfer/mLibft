@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:52:19 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/18 11:07:47 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:05:15 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*d;
 	unsigned char		*s;
 
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;

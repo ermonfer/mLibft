@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:53:34 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/08 14:12:51 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:08:38 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,10 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 	char	*copy;
 
-	copy = NULL;
-	if (s1 != NULL)
-	{
-		len = ft_strlen(s1) + 1;
-		copy = malloc(len);
-		if (copy == NULL)
-			return (NULL);
-		ft_memcpy(copy, s1, len);
-	}
+	len = ft_strlen(s1) + 1;
+	copy = malloc(len);
+	if (copy == NULL)
+		return (NULL);
+	ft_memcpy(copy, s1, len);
 	return (copy);
 }

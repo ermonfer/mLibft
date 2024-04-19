@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:52:57 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/17 17:52:59 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:26:15 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_lst = NULL;
 	while (lst != NULL)
 	{
-		node = ft_lstnew(f(lst->content));
+		node = ft_lstnew(lst->content);
 		if (node == NULL)
 		{
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
+		node->content = f(node->content);
 		ft_lstadd_back(&new_lst, node);
 		lst = lst->next;
 	}

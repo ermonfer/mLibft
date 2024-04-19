@@ -5,93 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 18:44:44 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/18 18:52:00 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/19 15:47:58 by fmontero          #+#    #+#             */
+/*   Updated: 2024/04/19 19:35:08 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	leaks(void)
-{
-	system("leaks -q a.out");
-}
-
-static int		count_words(char const *s, char c);
-static char		**copy_words(char const *s, char c, char **result, int len);
+static int		words_count(char const *s, char c);
+static char		**fill_result(char **result, char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
-	char			**result;
-	int				words;
+	char	**result;
 
-	if (s == NULL)
-		return (NULL);
-	words = count_words(s, c);
-	result = (char **)malloc((words + 1) * sizeof (char *));
+	result = (char **)malloc((words_count(s, c) + 1) * sizeof (char *));
 	if (result == NULL)
 		return (NULL);
-	if (c == '\0')
-	{
-		result[0] = ft_strdup(s);
-		if (result[0] == NULL)
-		{
-			free(result);
-			return (NULL);
-		}
-	}
-	else if (copy_words(s, c, result, words) == NULL)
+	if (fill_result(result, s, c) == NULL)
 	{
 		free(result);
 		return (NULL);
 	}
-	result[words] = NULL;
 	return (result);
 }
 
-static int	count_words(char const *s, char c)
+static int	words_count(char const *s, char c)
 {
-	int	words;
+	int		words;
 
 	words = 0;
 	while (*s != '\0')
 	{
-		if (*s == c)
+		while (*s == c)
 			s++;
-		else
+		if (*s != '\0')
 		{
 			words++;
-			while (*s != '\0' && *s != c)
+			while (*s != c && *s != '\0')
 				s++;
 		}
 	}
 	return (words);
 }
 
-static char	**copy_words(char const *s, char c, char **result, int len)
+static char	**fill_result(char **result, char const *s, char c)
 {
-	char const	*word_end;
-	int			i;
+	int				i;
+	char const		*word_beg;
 
 	i = 0;
-	while (*s == c)
-		s++;
-	while (i < len)
+	while (*s != '\0')
 	{
-		word_end = ft_strchr(s, c);
-		if (word_end == NULL)
-			word_end = ft_strchr(s, '\0');
-		result[i] = ft_substr(s, 0, word_end - s);
-		if (result[i++] == NULL)
+		while (*s == c)
+			s++;
+		if (*s == '\0')
+			break ;
+		word_beg = s;
+		s = ft_strchr(s, c);
+		if (s == NULL)
+			s = ft_strchr(word_beg, '\0');
+		result[i] = ft_substr(word_beg, 0, s - word_beg);
+		if (result[i] == NULL)
 		{
 			while (--i >= 0)
 				free(result[i]);
-			return ( NULL);
+			return (NULL);
 		}
-		while (*word_end == c)
-			word_end++;
-		s = word_end;
+		i++;
 	}
+	result[i] = NULL;
 	return (result);
 }
