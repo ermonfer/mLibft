@@ -5,8 +5,8 @@
 
 int main(int argc, char *argv[]) {
   if (argc !=  3) {
-    printf("Introduce 2 argumentos en lugar de %s", argv[0]);
-    return 1;
+    printf("uso: %s haystack needle", argv[0]);
+    return 1; 
   }
 
   const char *cadena = argv[1];

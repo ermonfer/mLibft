@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        printf("Uso: %d argumento\n", argc - 1);
+        printf("Uso: %s caracter", argv[0]);
         return 1;
     }
 

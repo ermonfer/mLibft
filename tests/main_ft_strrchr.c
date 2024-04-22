@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <string.h>
 #include "../source_code/libft.h"
@@ -6,7 +5,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        printf("Uso: %s cadena caracter\n", argv[0]);
+        printf("Uso: %s haystack needle\n", argv[0]);
         return 1;
     }
 

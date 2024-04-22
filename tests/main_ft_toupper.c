@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "../source_code/ft_toupper.c"
-#include "../source_code/ft_islower.c"
 
 int ft_toupper(int c);
 

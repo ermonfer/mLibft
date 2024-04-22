@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        printf("Uso: %s argumento\n", argv[0]);
+        printf("Uso: %s cadena\n", argv[0]);
         return 1;
     }
 

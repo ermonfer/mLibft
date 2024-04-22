@@ -1,8 +1,6 @@
 #include "../source_code/ft_isalnum.c"
 #include "../source_code/ft_isalpha.c"
 #include "../source_code/ft_isdigit.c"
-#include "../source_code/ft_isupper.c"
-#include "../source_code/ft_islower.c"
 #include <ctype.h>
 #include <stdio.h>
 
@@ -10,7 +8,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
 	{
-        printf("Uso: %s argumentos", argv[0]);
+        printf("Uso: %s caracter", argv[0]);
         return 1;
     }
 

@@ -3,34 +3,25 @@
 #include <stdlib.h>
 #include "../source_code/ft_memset.c"
 
-void *ft_memset(void *s, int c, size_t n);
-
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        printf("numero incorrecto de args");
+        printf("uso: %s caracter positivo", argv[0]);
 		return 1;
     }
 
-    char str[100];
-    int character = atoi(argv[2]);
+	char dest[100] = {0};
+	char c = argv[1][0];
+	int n = atoi(argv[2]);
 
-    // Copiar el argumento de línea de comandos a la cadena
-    strcpy(str, argv[1]);
+	char *ft_result = ft_memset(dest, c, n);
 
-    // Realizar la operación usando ft_memset
-    ft_memset(str, character, strlen(str));
+	printf("Resultado de ft_memset:\n%s\n", ft_result);
 
-    // Comparar los resultados
-    printf("Cadena después de ft_memset: %s\n", str);
+	bzero(dest, 100);
 
-    // Restaurar str para usar memset
-    strcpy(str, argv[1]);
+	char *result = memset(dest, c, n);
 
-    // Realizar la operación usando memset
-    memset(str, character, strlen(str));
+	printf("Resultado de memset:\n%s\n", result);
 
-    // Comparar los resultados
-    printf("Cadena después de memset: %s\n", str);
-
-    return 0;
+	return 0;
 }
