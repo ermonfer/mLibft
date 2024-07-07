@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:21:02 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/17 17:40:52 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/07/06 18:39:01 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@ char	*ft_itoa(int n)
 	if (result == NULL)
 		return (NULL);
 	result[--len] = '\0';
-	if (n == 0)
-		result[0] = '0';
 	if (n < 0)
 	{
 		result[0] = '-';
 		n *= -1;
 	}
-	while (n > 0)
+	while (n > 9)
 	{
 		result[--len] = (n % 10) + '0';
 		n /= 10;
 	}
+	result[--len] = n + '0';
 	return (result);
 }
 
@@ -46,15 +45,13 @@ static int	get_len(int n)
 {
 	int		i;
 
-	i = 1;
-	if (n == 0)
-		return (++i);
+	i = 2;
 	if (n < 0)
 	{
 		i++;
 		n *= -1;
 	}
-	while (n > 0)
+	while (n > 9)
 	{
 		i++;
 		n /= 10;
