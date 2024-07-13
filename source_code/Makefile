@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRC = ft_atoi.c\
+SRCS = ft_atoi.c\
 		ft_bzero.c\
 		ft_calloc.c\
 		ft_isalnum.c\
@@ -37,9 +37,9 @@ SRC = ft_atoi.c\
 		ft_tolower.c\
 		ft_toupper.c
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
-B_SRC = ft_lstadd_back_bonus.c\
+B_SRCS = ft_lstadd_back_bonus.c\
 	ft_lstadd_front_bonus.c\
 	ft_lstclear_bonus.c\
 	ft_lstdelone_bonus.c\
@@ -49,25 +49,27 @@ B_SRC = ft_lstadd_back_bonus.c\
 	ft_lstnew_bonus.c\
 	ft_lstsize_bonus.c
 
-B_OBJ = $(B_SRC:.c=.o)
+B_OBJS = $(B_SRCS:.c=.o)
 
 CFLAGS = -Werror -Wextra -Wall
 
 CC = gcc
 
 all: $(NAME)
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
-	ar -rcs $(NAME)  $(OBJ) 
+$(NAME): $(OBJS)
+	@ar -rcs $(NAME)  $(OBJS) 
 
 bonus: $(B_OBJ)
-	ar -rcs $(NAME) $(B_OBJ)
+	@ar -rcs $(NAME) $(B_OBJS)
 
 clean:
-	rm -rf $(OBJ) $(B_OBJ)
+	@rm -rf $(OBJS) $(B_OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
