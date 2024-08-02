@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:47:58 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/19 19:35:08 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int		words_count(char const *s, char c);
 static char		**fill_result(char **result, char const *s, char c);

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 13:53:34 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/19 21:08:38 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/04 19:05:45 by fmontero          #+#    #+#             */
+/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	len;
-	char	*copy;
+	void	*ptr;
 
-	len = ft_strlen(s1) + 1;
-	copy = malloc(len);
-	if (copy == NULL)
+	ptr = malloc(count * size);
+	if (ptr == NULL)
 		return (NULL);
-	ft_memcpy(copy, s1, len);
-	return (copy);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

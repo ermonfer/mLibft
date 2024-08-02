@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:51:37 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/17 17:51:39 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/15 15:15:31 by fmontero          #+#    #+#             */
+/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_putchar_fd(char c, int fd)
 {
-	t_list		*node;
-
-	while (*lst != NULL)
-	{
-		node = *lst;
-		*lst = (*lst)->next;
-		del(node->content);
-		free(node);
-	}
+	write(fd, &c, 1);
 }

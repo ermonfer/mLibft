@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42madrid>       +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:15:31 by fmontero          #+#    #+#             */
-/*   Updated: 2024/04/16 19:15:15 by fmontero         ###   ########.fr       */
+/*   Created: 2024/04/08 13:53:34 by fmontero          #+#    #+#             */
+/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+char	*ft_strdup(const char *s1)
 {
-	write(fd, &c, 1);
+	size_t	len;
+	char	*copy;
+
+	len = ft_strlen(s1) + 1;
+	copy = malloc(len);
+	if (copy == NULL)
+		return (NULL);
+	ft_memcpy(copy, s1, len);
+	return (copy);
 }

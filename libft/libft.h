@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmontero <fmontero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:17:57 by fmontero          #+#    #+#             */
-/*   Updated: 2024/07/07 12:29:55 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/08/02 20:26:57 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
