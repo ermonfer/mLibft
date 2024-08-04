@@ -6,7 +6,7 @@
 /*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:29:04 by fmontero          #+#    #+#             */
-/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
+/*   Updated: 2024/08/04 17:55:54 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*subs;
 	size_t	length;
 
+	if (s == NULL)
+		return (NULL);
 	length = ft_strlen(s);
 	if (start >= length)
 		return (ft_strdup(""));
