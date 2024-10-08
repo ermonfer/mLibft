@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_get_next_line.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:51:54 by fmontero          #+#    #+#             */
-/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
+/*   Created: 2024/07/11 19:51:49 by fmontero          #+#    #+#             */
+/*   Updated: 2024/09/29 21:45:14 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_GET_NEXT_LINE_H
+# define FT_GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+# include "libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stddef.h>
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (lst == NULL || del == NULL)
-		return ;
-	del(lst -> content);
-	free(lst);
-}
+char	*ft_get_next_line(int fd);
+#endif

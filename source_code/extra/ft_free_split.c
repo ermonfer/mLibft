@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontero <fmontero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 23:30:38 by fmontero          #+#    #+#             */
-/*   Updated: 2024/08/02 20:26:24 by fmontero         ###   ########.fr       */
+/*   Created: 2024/09/25 11:33:56 by fmontero          #+#    #+#             */
+/*   Updated: 2024/10/01 18:09:52 by fmontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "extra.h"
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_free_split(char **split)
 {
-	unsigned int	len;
-	size_t			i;
-	char			*result;
+	int	i;
 
-	len = (unsigned int)ft_strlen(s);
-	result = (char *)malloc(len + 1);
-	if (result == NULL)
-		return (NULL);
-	result[len] = '\0';
+	if (split == NULL)
+		return ;
 	i = 0;
-	while (i < len)
-	{
-		result[i] = f(i, s[i]);
-		i++;
-	}
-	return (result);
+	while (split[i] != NULL)
+		free(split[i++]);
+	free(split);
 }
