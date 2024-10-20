@@ -46,9 +46,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 
-build:
-	@$(AR) $(NAME) $(shell find . -type f -name "*.o")
-
 subject: $(OBJ_LIBFT)
 	@$(AR) $(NAME) $(OBJ_LIBFT)
 
